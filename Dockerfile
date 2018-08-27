@@ -9,4 +9,8 @@ RUN apt-get update
 RUN apt-get install -y python3 python3-pip nginx supervisor
 RUN pip3 install gunicorn
 
+RUN mkdir -p /deploy/ubuntu-nlp
+COPY . /deploy/ubuntu-nlp
+WORKDIR /deploy/ubuntu-nlp
+
 RUN bash install.sh
